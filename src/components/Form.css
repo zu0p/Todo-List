@@ -1,0 +1,33 @@
+.form {
+    display: flex;
+    padding-bottom: 10px;
+  }
+  
+  .form input {
+    flex: 1; /* 버튼을 뺀 빈 공간을 모두 채워줍니다 */
+    font-size: 1.25rem;
+    outline: none;
+    border: none;
+    padding-left: 2rem;
+    background-color: #fff5ef;
+    /* border-bottom: 1px solid #c7a389; */
+  }
+  
+  .create-button {
+    font-weight: bold;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-left: 0.85rem;
+    padding-right: 0.85rem;
+    margin-left: 1rem;
+    background: #c7a389;
+    border-radius: 50px;
+    color: #fffadd;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  
+  .create-button:hover {
+    background: #fffadd;
+    color: #c7a389;
+  }

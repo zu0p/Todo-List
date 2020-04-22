@@ -1,0 +1,65 @@
+.user-info-form{
+    width: 50vw;
+    display: table;
+}
+
+.table{
+    display: table-row-group;
+    /* table-layout: fixed;
+    width: 600px;
+    border-collapse: separate;
+    border-spacing: 10px;
+    text-align: right; */
+    
+    color:#82794f;
+    font-size: 1.2rem;
+}
+
+.tr{
+    display: table-row;
+}
+
+.td{
+    display: table-cell;
+    height: 2.5rem;
+}
+
+.td input{
+    font-size: 1.2rem;
+    outline: none;
+    border: none;
+    padding-left: 1rem;
+    background-color: #fff5ef;
+    width: 160px;
+}
+
+#thead{
+    text-align: right;
+    /* font-weight: bold; */
+    padding-right: 2rem;
+    width: 17vw;
+}
+
+#tinput{
+    text-align: left;
+    width: 10vw;
+}
+
+button{
+    border-style: none;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-left: 1rem;
+    background: #c7a389;
+    border-radius: 3px;
+    color: #fffadd;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #fffadd;
+    color: #c7a389;
+}

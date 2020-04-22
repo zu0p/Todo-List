@@ -1,0 +1,32 @@
+.signup-form{
+    width: 55vw;
+}
+
+.signup{
+    margin-left: 10vw;
+    margin-bottom: 2rem;
+    padding-left: 8vw;
+}
+
+.hint{
+    padding-top: 2rem;
+    padding-left: 0.5rem;
+}
+
+#signup-btn{
+    font-size: 1rem;
+    border-radius: 50px;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    padding-left: 1.6rem;
+    padding-right: 1.6rem;
+}
+
+#signup-btn:hover{
+    background-color: rgb(211, 231, 181);
+    color: white;
+}
+
+.gogogo{
+    text-align: right;
+}
