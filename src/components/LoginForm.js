@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { NavLink, Route } from 'react-router-dom';
+import { NavLink, Route, Link } from 'react-router-dom';
 import './LoginForm.css';
 import axios from 'axios';
 import { url } from '../shares/url';
@@ -13,10 +13,15 @@ function LoginForm() {
             pw : pw
         }).then(res => {
             console.log(res);
-            if(res.data == "success") // localStorage 저장
-                alert("success");
+            if(res.data.isLogged == 1) {// localStorage 저장
+                setId(res.data.id);
+                setPw(res.data.pw);
+                localStorage.setItem('isLogged','true');
+                localStorage.setItem('user_id', id);
+                window.location = "/todo";              
+            }
             else // alert
-                alert("fail");
+                alert("아이디 또는 비밀번호가 일치하지 않습니다.");
         });
     }
 
