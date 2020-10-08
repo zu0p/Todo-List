@@ -74,7 +74,7 @@ const ModalInner = styled.div`
     margin: 0 auto;
     padding: 40px 20px;
 `
-const CloseButton = styled.div`
+const CloseButton = styled.button`
 
 `
 export default Modal;

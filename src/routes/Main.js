@@ -1,6 +1,7 @@
 import React,{useState} from 'react'
-import TodoList from '../components/TodoList.js'
-import Modal from '../components/Modal.js'
+import TodoList from '../components/TodoList'
+import Modal from '../components/Modal'
+import AddForm from '../components/AddForm'
 
 const Main = () => {
     const [modalVisible, setModalVisible] = useState(false)
@@ -22,10 +23,12 @@ const Main = () => {
                 <button className="add_btn" onClick={openModal}>+</button>
             </div>
             {
-                modalVisible && <Modal visible={modalVisible}
-                                        closable={true}
-                                        maskClosable={true}
-                                        onClose={closeModal}>hi
+                modalVisible && <Modal 
+                                    visible={modalVisible}
+                                    closable={true}
+                                    maskClosable={true}
+                                    onClose={closeModal}>
+                                        <AddForm />
                                 </Modal>
             }
         </div>

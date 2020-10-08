@@ -9,7 +9,8 @@ const TodoList = () =>{
         async function fetchData() {
             const {
                 data : todos
-            } = await axios.post("http://localhost:8282/todo/show_todo_list",{id: "teo"});
+            } = await axios.post("http://localhost:8282/todo/show_todo_list",
+                {id: "teo"});
             
             setTodos(todos);
         }
@@ -20,12 +21,13 @@ const TodoList = () =>{
     return (
         <div className="todo_list">
             <div className="header">
-                Todo List
+                <h1>Todo List</h1>
             </div>
             <div className="todos">
                 {todos.map(items => (
                     <TodoItem 
                         //props
+                        key={items.todo_id}
                         id={items.todo_id}
                         contents={items.contents}
                         is_com={items.is_completed}
