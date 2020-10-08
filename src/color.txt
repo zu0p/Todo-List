@@ -1,0 +1,5 @@
+color palette
+ #eb9f9f
+ #f1bbba
+ #f8ecc9
+ #a79c8e
