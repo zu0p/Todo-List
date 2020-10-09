@@ -1,5 +1,5 @@
-import React, {useState, useEffect} from 'react'
-import styled, {css} from 'styled-components'
+import React, {useState} from 'react'
+import styled from 'styled-components'
 import axios from 'axios'
 
 const TodoItem =({id, contents, is_com, is_del})=>{    
@@ -25,7 +25,7 @@ const TodoItem =({id, contents, is_com, is_del})=>{
 
     return(
         <div>
-            {isDeleted==false?
+            {isDeleted===false?
                 <TodoItemWrapper>
                     <CompleteBox defaultChecked={isCompleted} onChange={handleChange} />
                     <TodoContents>
