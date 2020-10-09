@@ -6,19 +6,17 @@ import kakaoButton from '../images/kakao_login_medium_narrow.png'
 
 const Login = () => {
     const [resKakao, setResKakao] = useState([])
-    const responseKakao = (res) =>{
+    const loginWithKakao = (res) =>{
         setResKakao(res)
-
         // fetch
-
     }
 
     return(
         <div>
             <KakaoBtn
                 jsKey={'08f490ae27c5d710205522d64ade90f1'}
-                onSuccess={responseKakao}
-                onFailure={(res)=>console.res}
+                onSuccess={(res)=>loginWithKakao(res)}
+                onFailure={(res)=>console.log(res)}
                 getProfile={true}>
                     <img scr={kakaoButton} />
             </KakaoBtn>
@@ -26,6 +24,8 @@ const Login = () => {
     );
 }
 
-const KakaoBtn=styled.button``
+const KakaoBtn=styled.button`
+
+`
 
 export default Login;

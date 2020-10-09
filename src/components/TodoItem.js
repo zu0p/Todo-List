@@ -25,7 +25,7 @@ const TodoItem =({id, contents, is_com, is_del})=>{
 
     return(
         <div>
-            {isDeleted===false?
+            {isDeleted==false?
                 <TodoItemWrapper>
                     <CompleteBox defaultChecked={isCompleted} onChange={handleChange} />
                     <TodoContents>
@@ -46,7 +46,7 @@ const CompleteBox=styled.input.attrs({
 })``
 
 const TodoContents=styled.div`
-    
+color: ${(props) => props.is_com===1?"blue":"black"}
 `
 const DeleteButton=styled.button``
 
