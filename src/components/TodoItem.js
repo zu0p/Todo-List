@@ -28,9 +28,11 @@ const TodoItem =({id, contents, is_com, is_del})=>{
             {isDeleted==false?
                 <TodoItemWrapper>
                     <CompleteBox defaultChecked={isCompleted} onChange={handleChange} />
-                    <TodoContents>
-                        {contents}
-                    </TodoContents>
+                    {isCompleted?
+                        <TodoContents completed>{contents}</TodoContents>
+                    :
+                        <TodoContents uncompleted>{contents}</TodoContents>
+                    }
                     <DeleteButton onClick={handleDelete}>X</DeleteButton>
                 </TodoItemWrapper>
                 :null}
@@ -46,7 +48,9 @@ const CompleteBox=styled.input.attrs({
 })``
 
 const TodoContents=styled.div`
-color: ${(props) => props.is_com===1?"blue":"black"}
+    color: ${props => {
+        return props.completed?"gray":"black"
+    }}
 `
 const DeleteButton=styled.button``
 
