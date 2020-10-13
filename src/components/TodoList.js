@@ -1,6 +1,7 @@
 import React, { useState, useEffect }  from 'react'
 import axios from 'axios'
 import TodoItem from './TodoItem.js'
+import url from '../share/url'
 
 const TodoList = () =>{
     const [todos, setTodos] = useState([]);
@@ -9,7 +10,7 @@ const TodoList = () =>{
         async function fetchData() {
             const {
                 data : todos
-            } = await axios.post("http://localhost:8282/todo/show_todo_list",
+            } = await axios.post(`${url}/todo/show_todo_list`,
                 {id: "teo"});
             
             setTodos(todos);

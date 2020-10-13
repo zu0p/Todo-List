@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import styled from 'styled-components'
 import axios from 'axios'
+import url from '../share/url'
 
 const TodoItem =({id, contents, is_com, is_del})=>{    
     const [isCompleted, setIsCompleted] = useState(is_com===1?true:false)
@@ -8,18 +9,18 @@ const TodoItem =({id, contents, is_com, is_del})=>{
 
     async function handleChange(){        
         if(isCompleted){
-            await axios.post("http://localhost:8282/todo/uncomplete_todo", {id: id})            
+            await axios.post(`${url}/todo/uncomplete_todo`, {id: id})            
             setIsCompleted(false)
         }
         else{
-            await axios.post("http://localhost:8282/todo/complete_todo", {id: id})
+            await axios.post(`${url}/todo/complete_todo`, {id: id})
             setIsCompleted(true)
         }
     }
 
     async function handleDelete(){
         // 바로 지우기 전에 한번 더 물어봐야겠지
-        await axios.post("http://localhost:8282/todo/delete_todo", {id: id})
+        await axios.post(`${url}/todo/delete_todo`, {id: id})
         setIsDeleted(true)
     }
 

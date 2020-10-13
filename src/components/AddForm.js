@@ -1,6 +1,7 @@
 import React,{useState} from 'react'
 import styled from 'styled-components'
 import axios from 'axios'
+import url from '../share/url'
 
 const AddForm = () => {
     const [text, setText]=useState("")
@@ -10,7 +11,7 @@ const AddForm = () => {
     }
 
     async function handleClick(){
-        await axios.post("http://localhost:8282/todo/create_todo",{
+        await axios.post(`${url}/todo/create_todo`,{
             contents: text,
             id: "teo"   //user id
         })
