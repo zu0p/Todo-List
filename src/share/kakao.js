@@ -1,0 +1,2 @@
+const kakaoKey='08f490ae27c5d710205522d64ade90f1'
+export default kakaoKey

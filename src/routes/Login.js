@@ -3,7 +3,8 @@ import axios from 'axios'
 import KakaoLogin from 'react-kakao-login'
 import styled from 'styled-components'
 import url from '../share/url'
-import KAKAO_KEY from '../share/KAKAO_KEY'
+import kakaoKey from '../share/kakao'
+import LoginForm from '../components/LoginForm'
 
 const Login = () => {
     const [id, setId] = useState({}) // 로그인하는 유저 고유 번호
@@ -20,15 +21,15 @@ const Login = () => {
         console.log(err)
     }
 
+    async function localLogin(){
+
+    }
+
     return(
         <>
-            <LoginWrapper>
-                <ID />
-                <PW />
-                <LoginBtn />
-            </LoginWrapper>
+            <LoginForm />
             <KakaoBtn
-                jsKey={KAKAO_KEY}
+                jsKey={kakaoKey}
                 onSuccess={responseKakao}
                 onFailure={responseFail}
                 getProfile="true"
