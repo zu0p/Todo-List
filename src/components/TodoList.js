@@ -2,18 +2,28 @@ import React, { useState, useEffect }  from 'react'
 import axios from 'axios'
 import TodoItem from './TodoItem.js'
 import url from '../share/url'
+import headers from '../share/headers'
 
 const TodoList = () =>{
-    const [todos, setTodos] = useState([]);
+    const [todos, setTodos] = useState([""]);
 
     useEffect(()=>{
         async function fetchData() {
-            const {
-                data : todos
-            } = await axios.post(`${url}/todo/show_todo_list`,
-                {id: "teo"});
             
-            setTodos(todos);
+
+            await axios.get(`${url}/todo/show_todo_list`, {headers})
+            .then(res=>{
+                console.log(res)
+                if(res.data.success == true){
+                    const {
+                        data:{
+                            data: todos
+                        }
+                    } = res
+                    setTodos(todos)
+                    console.log(todos)
+                }
+            })
         }
 
         fetchData();
@@ -27,9 +37,9 @@ const TodoList = () =>{
             <div className="todos">
                 {todos.map(items => (
                     <TodoItem 
-                        //props
-                        key={items.todo_id}
-                        id={items.todo_id}
+                        // props
+                        key={items.id}
+                        id={items.id}
                         contents={items.contents}
                         is_com={items.is_completed}
                         is_del={items.is_deleted}

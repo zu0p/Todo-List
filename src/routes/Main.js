@@ -28,7 +28,7 @@ const Main = () => {
                                     closable={true}
                                     maskClosable={true}
                                     onClose={closeModal}>
-                                        <AddForm />
+                                        <AddForm name={"할일 추가"}/>
                                 </Modal>
             }
         </div>
