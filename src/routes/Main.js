@@ -2,6 +2,7 @@ import React,{useState} from 'react'
 import TodoList from '../components/TodoList'
 import Modal from '../components/Modal'
 import AddForm from '../components/AddForm'
+import Navigator from '../components/Navigator'
 
 const Main = () => {
     const [modalVisible, setModalVisible] = useState(false)
@@ -16,6 +17,7 @@ const Main = () => {
 
     return(
         <div className="main_wrapper">
+            <Navigator />
             <div className="list_wrapper">
                 <TodoList />
             </div>
