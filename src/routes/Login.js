@@ -39,17 +39,6 @@ const Login = () => {
     );
 }
 
-const LoginWrapper=styled.div`
-`
-
-const Input = styled.input`
-`
-
-const ID = styled(Input).attrs({type: 'text'})``
-const PW = styled(Input).attrs({type: 'password'})``
-
-const LoginBtn = styled.button``
-
 const KakaoBtn=styled(KakaoLogin)`
     padding: 0;
     width: 190px;
