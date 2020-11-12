@@ -25,22 +25,18 @@ const KakaoLoginForm =()=>{
             "Content-Type": "application/json"
         }
 
+        axios.defaults.headers = headers
         const res = await axios.post(`${url}/user/kakao`, body, headers)  
         const {success, data} = res.data 
-        console.log(res)
-        console.log(success)
         if(success==true){
-            localStorage.setItem("token", data.token)
-            console.log(data)
+            localStorage.setItem("token", data)
             window.location.reload()
         }
         else if(success==false){
             alert("카카오 로그인에 실패하였습니다.")
-            console.log(res)
         } 
         else{   
             console.log("대앵")  
-            console.log(res)
         }
     }
  
