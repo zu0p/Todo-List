@@ -6,7 +6,7 @@ import url from '../../share/url'
 import kakaoKey from '../../share/kakao'
 
 const KakaoLoginForm =()=>{
-    const responseKakao = async result =>{
+    const responseKakao =  async result =>{
         const {profile, response} = result
         const {id, kakao_account, properties} = profile
         const {access_token, refresh_token} = response
@@ -25,13 +25,23 @@ const KakaoLoginForm =()=>{
             "Content-Type": "application/json"
         }
 
-        const res = await axios.post(`${url}/user/kakao`, headers, body)
-        const {success, data} = res
+        const res = await axios.post(`${url}/user/kakao`, body, headers)  
+        const {success, data} = res.data 
+        console.log(res)
+        console.log(success)
         if(success==true){
-            localStorage.setItem("access-token", data.accessToken)
-            localStorage.setItem("refresh-token", data.refreshToken)
+            localStorage.setItem("token", data.token)
+            console.log(data)
             window.location.reload()
-        }else alert("카카오 로그인에 실패하였습니다.")
+        }
+        else if(success==false){
+            alert("카카오 로그인에 실패하였습니다.")
+            console.log(res)
+        } 
+        else{   
+            console.log("대앵")  
+            console.log(res)
+        }
     }
  
     const responseFail = (err) => {

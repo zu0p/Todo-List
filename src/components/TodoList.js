@@ -9,11 +9,8 @@ const TodoList = () =>{
 
     useEffect(()=>{
         async function fetchData() {
-            
-
             await axios.get(`${url}/todo/show_todo_list`, {headers})
             .then(res=>{
-                console.log(res)
                 if(res.data.success == true){
                     const {
                         data:{
@@ -21,7 +18,6 @@ const TodoList = () =>{
                         }
                     } = res
                     setTodos(todos)
-                    console.log(todos)
                 }
             })
         }

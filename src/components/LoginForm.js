@@ -15,13 +15,12 @@ const LoginForm = () => {
                 pw: user_pw
             })
             .then((res) => {
-                console.log(res)
                 if(res.data.success == true){                    
                     localStorage.setItem("token", res.data.data)
                     window.location.replace("/")
                 }
                 else{
-                    console.log("login실패")
+                    window.alert("아이디 혹은 비밀번호 오류")
                 }
             })
         }
